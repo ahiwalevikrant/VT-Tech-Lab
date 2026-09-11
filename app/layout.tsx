@@ -17,9 +17,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VT Tech Lab — High-Performance Web Apps & AI Systems | Freelance Studio",
+  title: "VT Tech Lab — AI-Centric Development, MCP Skills & Software Engineering",
   description:
-    "VT Tech Lab architects and builds custom web applications, production-grade AI systems, RAG bots, and high-throughput backend APIs for businesses and startups.",
+    "VT Tech Lab architects and builds production AI systems, custom MCP skills, high-speed open model pipelines (Groq, OpenRouter, Ollama), and full-stack web applications with Next.js and Java Spring Boot.",
   icons: {
     icon: "/VT-tech-lab-transparent.png",
     apple: "/VT-tech-lab-transparent.png",

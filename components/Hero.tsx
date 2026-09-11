@@ -5,20 +5,42 @@ import Image from "next/image";
 import { profile, clientProjects } from "@/lib/content";
 
 const showcaseModes = [
+  { id: "ai", label: "🤖 AI, MCP & Models", color: "purple" },
   { id: "apps", label: "🚀 Client Web Apps", color: "cyan" },
-  { id: "ai", label: "🤖 AI & Automations", color: "purple" },
-  { id: "backend", label: "⚡ Architecture", color: "indigo" },
+  { id: "systems", label: "⚡ GitHub & Architecture", color: "indigo" },
+];
+
+const aiDemos = [
+  {
+    tag: "Business AI Implementation",
+    query: "How can my business implement actionable AI without getting lost in hype?",
+    model: "Groq (Llama 3 70B • 480 tokens/sec)",
+    answer:
+      "We design step-by-step AI implementation action plans: 1) Audit manual workflows, 2) Connect private data via RAG & ChromaDB, 3) Deploy custom WhatsApp/Telegram customer triage bots, and 4) Upskill your staff for immediate productivity gains.",
+  },
+  {
+    tag: "MCP Skills & Tool Calling",
+    query: "Can you build custom Model Context Protocol (MCP) skills for our internal tools?",
+    model: "Claude Code / Antigravity Agent MCP",
+    answer:
+      "Yes! We build and connect MCP servers that empower AI assistants (Claude Code, Google Antigravity, Codex) to safely query private databases, invoke custom business APIs, execute code, and automate repetitive multi-step operations.",
+  },
+  {
+    tag: "Open Models & High Speed",
+    query: "Why choose OpenRouter, Groq, and Ollama over standard closed APIs?",
+    model: "OpenRouter & Ollama Local",
+    answer:
+      "OpenRouter gives multi-model flexibility, Groq delivers sub-second LPUs for real-time customer chatbots, and Ollama provides 100% private, on-premise open weights with zero cloud data leaks and massive cost savings.",
+  },
 ];
 
 export default function Hero() {
-  const [activeTab, setActiveTab] = useState<"apps" | "ai" | "backend">("apps");
+  const [activeTab, setActiveTab] = useState<"ai" | "apps" | "systems">("ai");
   const [selectedClientIndex, setSelectedClientIndex] = useState(0);
-  const [simulatedQuery, setSimulatedQuery] = useState("Can VT Tech Lab build custom AI bots and web apps for our business?");
-  const [aiResponse, setAiResponse] = useState(
-    "Yes! We design, develop, and ship full-stack web platforms, automated WhatsApp/Telegram bots, and custom RAG AI search pipelines with sub-second response times and seamless UX."
-  );
+  const [selectedAiIndex, setSelectedAiIndex] = useState(0);
 
   const activeProject = clientProjects[selectedClientIndex];
+  const activeAiDemo = aiDemos[selectedAiIndex];
 
   return (
     <section id="top" className="relative mx-auto max-w-content px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 pt-6 sm:pt-12 md:pt-16">
@@ -27,10 +49,10 @@ export default function Hero() {
       <div className="pointer-events-none absolute top-40 right-4 sm:right-10 -z-10 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-purple-600/20 blur-[110px] sm:blur-[140px]"></div>
 
       <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] xl:gap-14 items-center">
-        {/* Left Column: Bold Value Proposition & Big Prominent Logo */}
+        {/* Left Column: Bold Value Proposition & Brand Banner */}
         <div className="flex flex-col justify-center">
           
-          {/* Big Prominent Logo & Brand Banner on Landing Page */}
+          {/* Prominent Logo & Brand Banner */}
           <div className="mb-6 flex flex-wrap items-center gap-4 sm:gap-6">
             <div className="relative h-20 w-24 sm:h-24 sm:w-28 md:h-28 md:w-32 shrink-0 transition-transform duration-300 hover:scale-105">
               <Image
@@ -45,23 +67,39 @@ export default function Hero() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-950/60 px-4 py-1.5 text-xs font-extrabold text-cyan-300 shadow-[0_0_20px_rgba(0,240,255,0.3)] backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00F0FF] animate-pulse"></span>
-                <span>VT TECH LAB &bull; FREELANCE STUDIO</span>
+                <span>VT TECH LAB &bull; AI & SOFTWARE STUDIO</span>
               </div>
               <p className="mt-1.5 font-mono text-xs sm:text-sm font-bold tracking-wider text-slate-200 uppercase">
-                Software Engineering &bull; AI Systems
+                AI-Centric Development &bull; MCP &bull; Cloud Engineering
               </p>
             </div>
           </div>
 
           {/* Bold Vibrant Headline */}
-          <h1 className="text-3xl font-black leading-[1.12] tracking-tight text-white sm:text-5xl md:text-5xl lg:text-[3.4rem]">
-            We Build <span className="text-gradient-vibrant">High-Impact Web Apps</span> & <span className="text-gradient-cyan">Intelligent AI Systems</span>.
+          <h1 className="text-3xl font-black leading-[1.12] tracking-tight text-white sm:text-5xl md:text-5xl lg:text-[3.25rem]">
+            We Engineer <span className="text-gradient-vibrant">AI-Centric Systems</span>, <span className="text-gradient-cyan">MCP Workflows</span> & High-Impact Web Apps.
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle with key requested points */}
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-slate-300 max-w-[65ch]">
-            We partner with founders, businesses, and startups to build production-grade web applications, custom AI automations, and scalable cloud platforms — delivered fast, on budget, and engineered to scale.
+            Supercharging product delivery with <strong>AI assistant coding</strong> (Claude Code, Google Antigravity, Codex) and <strong>learning by doing</strong>. We build custom MCP skills, guide businesses through practical AI implementation actions, and deploy fast open-model architectures (Groq, OpenRouter, Ollama) with modern UX by Snitch design standards.
           </p>
+
+          {/* Feature Badges Row */}
+          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
+            <span className="rounded-full bg-cyan-500/15 border border-cyan-500/30 px-3 py-1 text-cyan-300 flex items-center gap-1.5">
+              <span>⚡</span> Claude Code & Antigravity
+            </span>
+            <span className="rounded-full bg-purple-500/15 border border-purple-500/30 px-3 py-1 text-purple-300 flex items-center gap-1.5">
+              <span>🔌</span> Model Context Protocol (MCP)
+            </span>
+            <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 text-emerald-300 flex items-center gap-1.5">
+              <span>🚀</span> Groq, OpenRouter & Ollama
+            </span>
+            <span className="rounded-full bg-pink-500/15 border border-pink-500/30 px-3 py-1 text-pink-300 flex items-center gap-1.5">
+              <span>🎨</span> UX by Snitch & Next.js 16
+            </span>
+          </div>
 
           {/* CTA Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
@@ -69,14 +107,14 @@ export default function Hero() {
               href="#contact"
               className="glow-btn inline-flex items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-sm font-bold text-slate-950 shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all hover:scale-105"
             >
-              <span>🚀 Start Your Project</span>
+              <span>🚀 Start AI Project / Consultation</span>
               <span className="text-xs">→</span>
             </a>
             <a
               href="#work"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)]"
             >
-              <span>Explore Client Work</span>
+              <span>Explore Client & GitHub Work</span>
             </a>
           </div>
 
@@ -84,26 +122,26 @@ export default function Hero() {
           <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-3 sm:gap-4 border-t border-white/10 pt-6">
             <div className="border-r border-white/10 pr-2 sm:pr-3">
               <span className="text-xl sm:text-3xl font-black text-cyan-400 drop-shadow-[0_0_10px_rgba(0,240,255,0.4)]">
-                100%
+                10x
               </span>
-              <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-slate-300">Live Client Builds</p>
+              <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-slate-300">AI Coding Velocity</p>
             </div>
             <div className="border-r border-white/10 pr-2 sm:pr-3">
               <span className="text-xl sm:text-3xl font-black text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">
-                3.5+ Yrs
+                MCP & RAG
               </span>
-              <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-slate-300">Production Scale</p>
+              <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-slate-300">Agent Integrations</p>
             </div>
             <div>
               <span className="text-xl sm:text-3xl font-black text-emerald-400 drop-shadow-[0_0_10px_rgba(16,185,129,0.4)]">
-                Rapid
+                Actionable
               </span>
-              <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-slate-300">Sprint MVP Delivery</p>
+              <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-slate-300">Business AI Roadmaps</p>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Impressive Vibrant Interactive Showcase */}
+        {/* Right Column: Interactive Showcase Cockpit */}
         <div className="flex flex-col justify-center">
           <div className="glass-card relative overflow-hidden p-5 sm:p-7 shadow-2xl">
             {/* Top Bar with Branding */}
@@ -117,12 +155,12 @@ export default function Hero() {
                   className="drop-shadow-[0_0_10px_rgba(0,240,255,0.6)]"
                 />
                 <span className="font-mono text-xs font-bold text-white tracking-wider">
-                  VT TECH LAB COCKPIT
+                  VT TECH LAB AI COCKPIT
                 </span>
               </div>
               <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-0.5 font-mono text-[10px] sm:text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                ACTIVE
+                LIVE LAB ONLINE
               </span>
             </div>
 
@@ -143,7 +181,77 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* TAB 1: Live Client Apps */}
+            {/* TAB 1: AI, MCP & Models */}
+            {activeTab === "ai" && (
+              <div className="mt-5 space-y-4">
+                <div className="glass-panel p-4 sm:p-5">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-[11px] font-bold text-white shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+                        AI
+                      </div>
+                      <span className="text-xs font-bold text-white">
+                        {activeAiDemo.tag}
+                      </span>
+                    </div>
+                    <span className="rounded-full bg-purple-500/15 border border-purple-500/30 px-2 py-0.5 font-mono text-[10px] font-semibold text-purple-300">
+                      {activeAiDemo.model}
+                    </span>
+                  </div>
+
+                  {/* Interactive AI Query Selector */}
+                  <div className="mt-3 flex gap-1.5 overflow-x-auto pb-1">
+                    {aiDemos.map((demo, idx) => (
+                      <button
+                        key={demo.tag}
+                        onClick={() => setSelectedAiIndex(idx)}
+                        className={`rounded-lg px-2.5 py-1 text-[10px] font-semibold transition-all whitespace-nowrap ${
+                          selectedAiIndex === idx
+                            ? "bg-purple-500/30 border border-purple-400 text-purple-200 shadow-[0_0_10px_rgba(168,85,247,0.3)]"
+                            : "bg-slate-900 border border-white/10 text-slate-400 hover:text-white"
+                        }`}
+                      >
+                        {demo.tag}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Query Preview */}
+                  <div className="mt-3 space-y-3 font-sans text-xs">
+                    <div className="rounded-xl border border-white/10 bg-slate-950/70 p-3">
+                      <span className="text-[10px] font-bold uppercase text-cyan-400 tracking-wider">
+                        Business / Engineering Need:
+                      </span>
+                      <p className="mt-1 font-medium text-white">&quot;{activeAiDemo.query}&quot;</p>
+                    </div>
+
+                    <div className="rounded-xl border border-purple-500/30 bg-purple-950/30 p-3.5 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+                      <div className="flex items-center justify-between text-[10px] font-bold text-purple-300">
+                        <span>ACTIONABLE AI BLUEPRINT:</span>
+                        <span className="text-emerald-400">PROVEN ROI</span>
+                      </div>
+                      <p className="mt-2 text-xs leading-relaxed text-slate-100">
+                        {activeAiDemo.answer}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Tooling Tags */}
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {["Claude Code", "Google Antigravity", "Codex", "MCP Skills", "Groq LPU", "Ollama", "OpenRouter"].map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-md border border-white/10 bg-slate-900/80 px-2 py-0.5 text-[10px] font-mono text-cyan-300"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 2: Live Client Apps */}
             {activeTab === "apps" && (
               <div className="mt-5 space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -217,100 +325,37 @@ export default function Hero() {
               </div>
             )}
 
-            {/* TAB 2: AI & GenAI Simulation */}
-            {activeTab === "ai" && (
-              <div className="mt-5 space-y-4">
-                <div className="glass-panel p-4 sm:p-5">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                    <div className="flex items-center gap-2">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-[11px] font-bold text-white shadow-[0_0_10px_rgba(168,85,247,0.5)]">
-                        AI
-                      </div>
-                      <span className="text-xs font-bold text-white">
-                        VT AI Knowledge Engine
-                      </span>
-                    </div>
-                    <span className="rounded-full bg-purple-500/15 border border-purple-500/30 px-2 py-0.5 text-[10px] font-semibold text-purple-300">
-                      RAG + Vector
-                    </span>
-                  </div>
-
-                  {/* Interactive Query Preview */}
-                  <div className="mt-4 space-y-3 font-sans text-xs">
-                    <div className="rounded-xl border border-white/10 bg-slate-950/70 p-3">
-                      <span className="text-[10px] font-bold uppercase text-cyan-400 tracking-wider">
-                        Business Query:
-                      </span>
-                      <p className="mt-1 font-medium text-white">&quot;{simulatedQuery}&quot;</p>
-                    </div>
-
-                    <div className="rounded-xl border border-purple-500/30 bg-purple-950/30 p-3.5 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
-                      <div className="flex items-center justify-between text-[10px] font-bold text-purple-300">
-                        <span>AI RESPONSE (Sub-500ms):</span>
-                        <span className="text-emerald-400">99.4% MATCH</span>
-                      </div>
-                      <p className="mt-2 text-xs leading-relaxed text-slate-100">
-                        {aiResponse}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Quick test buttons */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <button
-                      onClick={() => {
-                        setSimulatedQuery("Can you build an automated WhatsApp customer booking bot?");
-                        setAiResponse("Yes! We build automated WhatsApp & Telegram bots with instant customer lead capture, catalog booking flows, and admin notifications.");
-                      }}
-                      className="rounded-lg border border-white/10 bg-slate-900/80 px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-[11px] font-medium text-slate-300 transition-all hover:border-purple-400 hover:text-purple-300"
-                    >
-                      💬 WhatsApp Bot
-                    </button>
-                    <button
-                      onClick={() => {
-                        setSimulatedQuery("Can you build an AI search engine for our company documents?");
-                        setAiResponse("Absolutely! We implement vector embeddings (ChromaDB) and RAG pipelines to give your users lightning-fast, verified semantic search over your private documentation.");
-                      }}
-                      className="rounded-lg border border-white/10 bg-slate-900/80 px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-[11px] font-medium text-slate-300 transition-all hover:border-cyan-400 hover:text-cyan-300"
-                    >
-                      📄 Document Search
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* TAB 3: Scalable Architecture */}
-            {activeTab === "backend" && (
+            {/* TAB 3: GitHub & Systems */}
+            {activeTab === "systems" && (
               <div className="mt-5 space-y-4">
                 <div className="glass-panel p-4 sm:p-5">
                   <h4 className="text-xs sm:text-sm font-bold text-cyan-300">
-                    BATTLE-TESTED ENTERPRISE TECH STACK
+                    FEATURED OPEN GITHUB & ENTERPRISE BUILDS
                   </h4>
                   <p className="mt-1 text-[11px] sm:text-xs text-slate-300">
-                    Engineered for high throughput, sub-100ms response times, and 99.9% uptime.
+                    Hands-on production engines built with AI biometrics, Groq LPUs, and enterprise microservices.
                   </p>
 
                   <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 text-xs">
                     <div className="rounded-xl border border-white/10 bg-slate-950/70 p-2.5 sm:p-3">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-cyan-400 uppercase">Modern Frontend</span>
-                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">Next.js & React</p>
-                      <span className="text-[10px] text-slate-400">SEO & Core Vitals</span>
+                      <span className="text-[9px] sm:text-[10px] font-bold text-cyan-400 uppercase">Biometrics & Java</span>
+                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">HabitProof Engine</p>
+                      <span className="text-[10px] text-slate-400">ArcFace + Spring Boot 3.3</span>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-slate-950/70 p-2.5 sm:p-3">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-purple-400 uppercase">Backend & APIs</span>
-                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">Java & Node</p>
-                      <span className="text-[10px] text-slate-400">High concurrency</span>
+                      <span className="text-[9px] sm:text-[10px] font-bold text-purple-400 uppercase">AI Job Kanban</span>
+                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">AI Job Tracker</p>
+                      <span className="text-[10px] text-slate-400">Groq + OpenRouter + Next.js</span>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-slate-950/70 p-2.5 sm:p-3">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-blue-400 uppercase">Data & Vectors</span>
-                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">Postgres + Chroma</p>
-                      <span className="text-[10px] text-slate-400">Semantic Search</span>
+                      <span className="text-[9px] sm:text-[10px] font-bold text-blue-400 uppercase">Telegram AI Tutor</span>
+                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">CBSE-Bot (RAG)</p>
+                      <span className="text-[10px] text-slate-400">ChromaDB + LangChain</span>
                     </div>
                     <div className="rounded-xl border border-white/10 bg-slate-950/70 p-2.5 sm:p-3">
-                      <span className="text-[9px] sm:text-[10px] font-bold text-emerald-400 uppercase">DevOps & Cloud</span>
-                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">Docker & CI/CD</p>
-                      <span className="text-[10px] text-slate-400">Auto deploy</span>
+                      <span className="text-[9px] sm:text-[10px] font-bold text-emerald-400 uppercase">Enterprise Streaming</span>
+                      <p className="mt-1 font-bold text-white text-xs sm:text-sm">Kafka Microservices</p>
+                      <span className="text-[10px] text-slate-400">Java 21 + Ollama (Llama 3)</span>
                     </div>
                   </div>
                 </div>
@@ -321,7 +366,7 @@ export default function Hero() {
             <div className="mt-4 flex items-center justify-between font-sans text-[11px] sm:text-xs font-medium text-slate-400">
               <span className="flex items-center gap-1.5 sm:gap-2 text-cyan-300">
                 <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00F0FF]"></span>
-                Direct Founder-Led Development
+                Learning by Doing &bull; Direct Founder Delivery
               </span>
               <span>Fixed Milestone Pricing</span>
             </div>
@@ -331,5 +376,6 @@ export default function Hero() {
     </section>
   );
 }
+
 
 

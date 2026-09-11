@@ -5,22 +5,22 @@ import { SectionHeading } from "@/components/Skills";
 export default function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-content px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-      <SectionHeading index="06" title="Start a Project / Hire VT Tech Lab" />
+      <SectionHeading index="06" title="Start an AI Project / Hire VT Tech Lab" />
       
       <div className="mt-10 sm:mt-12 grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
         {/* Left Column: Direct Pitch & Vibrant Action Buttons */}
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3.5 sm:px-4 py-1.5 font-sans text-xs font-bold text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Accepting New Freelance & Contract Builds
+            Accepting New AI Projects, Business Consulting & Full-Stack Builds
           </div>
 
           <h3 className="mt-4 sm:mt-5 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
-            Let&apos;s Build Your Next Big Product.
+            Let&apos;s Build Your Next Intelligent Product.
           </h3>
 
           <p className="mt-4 max-w-[56ch] text-base leading-relaxed text-slate-300">
-            Have a web app, MVP, customer booking system, or custom AI automation project in mind? We provide fixed-price quotes, fast iterative sprints, and high-standard engineering.
+            Need an actionable business AI roadmap, custom MCP agent integration, or production-grade Next.js web platform? We provide transparent fixed-milestone pricing, rapid sprint delivery, and hands-on &apos;learning by doing&apos; execution.
           </p>
 
           {/* Direct Vibrant Actions */}
@@ -36,7 +36,7 @@ export default function Contact() {
             </a>
 
             <a
-              href={`mailto:${profile.email}?subject=Freelance%20Project%20Inquiry%20-%20VT%20Tech%20Lab`}
+              href={`mailto:${profile.email}?subject=AI%20Project%20Inquiry%20-%20VT%20Tech%20Lab`}
               className="glow-btn inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-sans text-sm font-bold text-slate-950 shadow-[0_0_25px_rgba(0,240,255,0.4)] transition-all hover:scale-105 hover:brightness-110"
             >
               <span>✉ {profile.email}</span>
@@ -52,7 +52,7 @@ export default function Contact() {
 
           <div className="mt-6 flex items-center gap-2 font-sans text-xs text-slate-300">
             <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-ping"></span>
-            <span>⚡ Typical response time: <strong className="text-cyan-300">Under 4 hours</strong>.</span>
+            <span>⚡ Direct founder response time: <strong className="text-cyan-300">Under 4 hours</strong>.</span>
           </div>
         </div>
 
@@ -63,14 +63,15 @@ export default function Contact() {
               <span className="font-sans text-sm font-bold text-cyan-400">STUDIO DOSSIER</span>
             </div>
             <span className="rounded-full bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-0.5 font-mono text-[10px] text-cyan-300">
-              VERIFIED FREELANCER
+              VERIFIED AI & WEB STUDIO
             </span>
           </div>
 
           <dl className="mt-5 space-y-4">
             <Row label="Studio" value={profile.firm} />
             <Row label="Lead Engineer" value={profile.name} />
-            <Row label="Focus Areas" value="Web Apps & AI Systems" />
+            <Row label="Core Focus" value="AI-Centric Dev, MCP & Web Apps" />
+            <Row label="AI Workflows" value="Claude Code, Antigravity, Groq, Ollama" />
             <Row label="Location" value={profile.location} />
             <Row
               label="GitHub"
@@ -79,7 +80,7 @@ export default function Contact() {
             />
             <Row
               label="LinkedIn"
-              value={profile.linkedin.replace("https://", "")}
+              value="vikrant-ahiwale-7917a7268"
               href={profile.linkedin}
             />
           </dl>
@@ -133,5 +134,6 @@ function Row({ label, value, href }: { label: string; value: string; href?: stri
     </div>
   );
 }
+
 
 

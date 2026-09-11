@@ -5,12 +5,12 @@ import Image from "next/image";
 import { profile } from "@/lib/content";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#work", label: "Client Work" },
-  { href: "#solutions", label: "AI & Tech" },
-  { href: "#skills", label: "Capabilities" },
+  { href: "#services", label: "Services & AI Actions" },
+  { href: "#work", label: "Client Apps" },
+  { href: "#solutions", label: "AI Systems & MCP" },
+  { href: "#skills", label: "AI Stack" },
   { href: "#experience", label: "Track Record" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "Consultation" },
 ];
 
 export default function Nav() {
@@ -39,7 +39,7 @@ export default function Nav() {
               <span className="flex h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#00F0FF] animate-pulse"></span>
             </div>
             <span className="font-mono text-[9px] sm:text-[10px] font-bold tracking-widest text-cyan-400">
-              SOFTWARE ENGINEERING &bull; AI SYSTEMS
+              AI-CENTRIC DEV &bull; SOFTWARE ENGINEERING
             </span>
           </div>
         </a>

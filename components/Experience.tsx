@@ -22,9 +22,6 @@ export default function Experience() {
                 </span>
                 <h3 className="mt-3 text-xl font-bold text-white">{role.role}</h3>
                 <p className="mt-1 font-sans text-sm font-semibold text-purple-400">{role.company}</p>
-                {role.companyNote && (
-                  <p className="mt-0.5 text-xs text-slate-400">{role.companyNote}</p>
-                )}
               </div>
               <ul className="space-y-3 text-sm leading-relaxed text-slate-300">
                 {role.points.map((point, i) => (

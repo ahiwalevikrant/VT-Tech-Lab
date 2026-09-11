@@ -3,17 +3,18 @@ import { skillGroups } from "@/lib/content";
 const groupColors = [
   { border: "hover:border-cyan-400/50", title: "text-cyan-400", dot: "text-cyan-400" },
   { border: "hover:border-purple-400/50", title: "text-purple-400", dot: "text-purple-400" },
-  { border: "hover:border-blue-400/50", title: "text-blue-400", dot: "text-blue-400" },
   { border: "hover:border-emerald-400/50", title: "text-emerald-400", dot: "text-emerald-400" },
+  { border: "hover:border-blue-400/50", title: "text-blue-400", dot: "text-blue-400" },
   { border: "hover:border-pink-400/50", title: "text-pink-400", dot: "text-pink-400" },
+  { border: "hover:border-indigo-400/50", title: "text-indigo-400", dot: "text-indigo-400" },
 ];
 
 export default function Skills() {
   return (
     <section id="skills" className="mx-auto max-w-content px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-      <SectionHeading index="04" title="Technical Capabilities & Tooling" />
-      <p className="mt-4 max-w-[68ch] text-base sm:text-lg leading-relaxed text-slate-300">
-        Industry-leading technologies chosen for peak performance, scale, developer velocity, and bulletproof reliability.
+      <SectionHeading index="04" title="AI Capabilities, Tooling & Stack" />
+      <p className="mt-4 max-w-[70ch] text-base sm:text-lg leading-relaxed text-slate-300">
+        Engineered with agentic AI assistants (<span className="text-cyan-300 font-semibold">Claude Code, Antigravity, Codex</span>), <span className="text-purple-300 font-semibold">MCP protocols</span>, high-speed open models (<span className="text-emerald-300 font-semibold">Groq, OpenRouter, Ollama</span>), and enterprise-grade cloud stacks.
       </p>
 
       <div className="mt-10 sm:mt-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -63,5 +64,6 @@ export function SectionHeading({ index, title }: { index: string; title: string 
     </div>
   );
 }
+
 
 
