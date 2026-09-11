@@ -22,84 +22,114 @@ html {
   }
 }
 
+/* Futuristic / Robotic Deep Neural Matrix Background */
 body {
-  background-color: #050811;
-  color: #F8FAFC;
+  background-color: #030712;
+  color: #E2E8F0;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 240, 255, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(99, 102, 241, 0.12), transparent),
-    radial-gradient(ellipse 50% 50% at 20% 70%, rgba(168, 85, 247, 0.1), transparent);
+    /* Diffused Neural Ambient Glows */
+    radial-gradient(circle at 50% -10%, rgba(14, 165, 233, 0.12), transparent 55%),
+    radial-gradient(circle at 85% 25%, rgba(99, 102, 241, 0.08), transparent 45%),
+    radial-gradient(circle at 15% 65%, rgba(16, 185, 129, 0.06), transparent 45%),
+    /* Robotic Cyber Grid Mesh */
+    linear-gradient(to right, rgba(56, 189, 248, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
   background-attachment: fixed;
 }
 
 ::selection {
-  background-color: #00F0FF;
-  color: #050811;
+  background-color: #38BDF8;
+  color: #030712;
 }
 
-/* Visible keyboard focus */
+/* Keyboard focus ring */
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #00F0FF;
+  outline: 2px solid #38BDF8;
   outline-offset: 3px;
   border-radius: 6px;
 }
 
+/* Sleek Cyber Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050811;
+  background: #030712;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1F2D4D;
-  border-radius: 4px;
+  background: #1E293B;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00F0FF;
+  background: #38BDF8;
 }
 
-/* Modern Glass Card */
+/* Robotic Cyber Glass Card */
 .glass-card {
-  background: linear-gradient(135deg, rgba(14, 21, 38, 0.85) 0%, rgba(9, 14, 26, 0.95) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  backdrop-filter: blur(16px);
+  background: linear-gradient(145deg, rgba(8, 14, 28, 0.88) 0%, rgba(4, 8, 18, 0.95) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 0.875rem;
+  backdrop-filter: blur(18px);
+  position: relative;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 240, 255, 0.4);
+  border-color: rgba(56, 189, 248, 0.35);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(0, 240, 255, 0.2);
+  box-shadow: 0 12px 32px -8px rgba(14, 165, 233, 0.15), inset 0 1px 0 rgba(56, 189, 248, 0.2);
 }
 
 .glass-panel {
-  background: rgba(14, 21, 38, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 18, 34, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.1);
   border-radius: 0.75rem;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 }
 
+/* Subtle Soothing Text Gradients */
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #00F0FF 0%, #38BDF8 50%, #818CF8 100%);
+  background: linear-gradient(135deg, #E0F2FE 0%, #38BDF8 50%, #818CF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-vibrant {
-  background: linear-gradient(135deg, #00F0FF 0%, #3B82F6 40%, #A855F7 80%, #EC4899 100%);
+  background: linear-gradient(135deg, #F0FDF4 0%, #34D399 35%, #38BDF8 70%, #A78BFA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Cybernetic Glow Button - Calmed & Eye-Soothing */
 .glow-btn {
-  background: linear-gradient(135deg, #00F0FF 0%, #2563EB 50%, #7C3AED 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #2563EB 55%, #4F46E5 100%);
+  color: #F8FAFC;
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.25);
   transition: all 0.3s ease;
 }
 
 .glow-btn:hover {
-  filter: brightness(1.15);
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+  filter: brightness(1.12);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.45);
 }
+
+/* HUD Telemetry Tag Badge */
+.hud-tag {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Scrollbar Utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
