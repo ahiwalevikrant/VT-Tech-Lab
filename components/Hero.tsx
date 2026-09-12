@@ -5,376 +5,294 @@ import Image from "next/image";
 import { profile, clientProjects } from "@/lib/content";
 
 const showcaseModes = [
-  { id: "ai", label: "🤖 AI & MCP", fullLabel: "🤖 AI & MCP Skills", color: "purple" },
-  { id: "apps", label: "🚀 Client Apps", fullLabel: "🚀 Client Web Apps", color: "cyan" },
-  { id: "systems", label: "⚡ GitHub Stack", fullLabel: "⚡ GitHub Systems", color: "indigo" },
+  { id: "ai", label: "AI & MCP Engine", icon: "✨" },
+  { id: "apps", label: "Client Production", icon: "🚀" },
+  { id: "systems", label: "GitHub Systems", icon: "⚡" },
 ];
 
-const aiDemos = [
+const aiCapabilities = [
   {
-    tag: "AI Action Plan",
-    fullTag: "Business AI Implementation",
-    query: "How can my business implement actionable AI without getting lost in hype?",
-    model: "Groq LPU // 480 t/s",
-    answer:
-      "We design step-by-step AI implementation action plans: 1) Audit manual workflows, 2) Connect private data via RAG & ChromaDB, 3) Deploy custom WhatsApp/Telegram customer triage bots, and 4) Upskill your staff for immediate productivity gains.",
+    title: "AI Assistant Coding",
+    tool: "Claude Code • Antigravity • Codex",
+    detail: "10x engineering velocity with automated agentic coding loops and rapid learning-by-doing sprints.",
+    badge: "10x Velocity",
+    badgeColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
   },
   {
-    tag: "MCP Skills",
-    fullTag: "MCP Skills & Tool Calling",
-    query: "Can you build custom Model Context Protocol (MCP) skills for our internal tools?",
-    model: "Claude Code // Antigravity Agent",
-    answer:
-      "Yes! We build and connect MCP servers that empower AI assistants (Claude Code, Google Antigravity, Codex) to safely query private databases, invoke custom business APIs, execute code, and automate repetitive multi-step operations.",
+    title: "Model Context Protocol (MCP)",
+    tool: "Custom MCP Tool Servers",
+    detail: "Bridging autonomous AI assistants to private enterprise databases, APIs, and custom tools.",
+    badge: "Tool Calling",
+    badgeColor: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
   },
   {
-    tag: "Open Models",
-    fullTag: "Open Models & High Speed",
-    query: "Why choose OpenRouter, Groq, and Ollama over standard closed APIs?",
-    model: "Groq LPU + Ollama Local",
-    answer:
-      "OpenRouter gives multi-model flexibility, Groq delivers sub-second LPUs for real-time customer chatbots, and Ollama provides 100% private, on-premise open weights with zero cloud data leaks and massive cost savings.",
+    title: "High-Speed Open Models",
+    tool: "Groq (500 t/s) • OpenRouter • Ollama",
+    detail: "Sub-second Groq inference, smart multi-model routing, and local zero-leak Ollama weights.",
+    badge: "Sub-Second LPU",
+    badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+  },
+  {
+    title: "Actionable AI Blueprints",
+    tool: "Discovery to Team Handover",
+    detail: "Empowering businesses with custom AI workflow automation, RAG knowledge bases, and team training.",
+    badge: "Action Blueprint",
+    badgeColor: "text-purple-400 bg-purple-500/10 border-purple-500/20",
   },
 ];
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState<"ai" | "apps" | "systems">("ai");
   const [selectedClientIndex, setSelectedClientIndex] = useState(0);
-  const [selectedAiIndex, setSelectedAiIndex] = useState(0);
 
   const activeProject = clientProjects[selectedClientIndex];
-  const activeAiDemo = aiDemos[selectedAiIndex];
 
   return (
-    <section id="top" className="relative mx-auto max-w-content px-4 sm:px-6 lg:px-8 pb-10 sm:pb-16 md:pb-24 pt-4 sm:pt-8 md:pt-12 overflow-hidden">
-      {/* Soothing Ambient Neural Glows */}
-      <div className="pointer-events-none absolute -top-24 left-1/4 -z-10 h-[300px] sm:h-[480px] w-[300px] sm:w-[480px] rounded-full bg-cyan-500/10 blur-[100px] sm:blur-[140px]"></div>
-      <div className="pointer-events-none absolute top-36 right-4 sm:right-12 -z-10 h-[280px] sm:h-[420px] w-[280px] sm:w-[420px] rounded-full bg-indigo-500/08 blur-[100px] sm:blur-[140px]"></div>
-
-      <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr] xl:gap-14 items-center">
-        {/* Left Column: Value Proposition & Brand Banner */}
-        <div className="flex flex-col justify-center">
-          
-          {/* Prominent Logo & Robotic Telemetry Banner */}
-          <div className="mb-4 sm:mb-6 flex flex-wrap items-center gap-3 sm:gap-5">
-            <div className="relative h-16 w-20 sm:h-22 sm:w-26 md:h-26 md:w-30 shrink-0 transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/VT-tech-lab-icon.png"
-                alt="VT Tech Lab Logo"
-                width={120}
-                height={100}
-                className="h-full w-full object-contain drop-shadow-[0_0_20px_rgba(56,189,248,0.7)]"
-                priority
-              />
-            </div>
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-950/40 px-3 sm:px-3.5 py-1 text-[11px] sm:text-xs font-mono font-semibold text-sky-300 shadow-[0_0_12px_rgba(14,165,233,0.15)] backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34D399] animate-pulse"></span>
-                <span>VT TECH LAB // AI &amp; SOFTWARE STUDIO</span>
-              </div>
-              <p className="mt-1 font-mono text-[11px] sm:text-xs md:text-sm font-semibold tracking-wider text-slate-300 uppercase">
-                AI-Centric Development &bull; MCP Skills &bull; Cloud Systems
-              </p>
-            </div>
-          </div>
-
-          {/* Bold Eye-Soothing Headline */}
-          <h1 className="text-2xl font-black leading-[1.15] tracking-tight text-slate-100 sm:text-4xl md:text-5xl lg:text-[3.15rem]">
-            We Engineer <span className="text-gradient-vibrant">AI-Centric Systems</span>, <span className="text-gradient-cyan">MCP Workflows</span> &amp; High-Impact Web Apps.
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-3.5 sm:mt-5 text-sm sm:text-base md:text-lg leading-relaxed text-slate-300 max-w-[65ch]">
-            Supercharging product delivery with <strong>AI assistant coding</strong> (Claude Code, Google Antigravity, Codex) and <strong>learning by doing</strong>. We build custom MCP skills, guide businesses through practical AI implementation actions, and deploy fast open-model architectures (Groq, OpenRouter, Ollama) with modern UX by Snitch design standards.
-          </p>
-
-          {/* Feature Badges Row */}
-          <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono font-medium">
-            <span className="rounded-lg bg-sky-500/10 border border-sky-500/25 px-2.5 sm:px-3 py-1 text-sky-300 flex items-center gap-1.5">
-              <span>⚡</span> Claude Code &amp; Antigravity
-            </span>
-            <span className="rounded-lg bg-indigo-500/10 border border-indigo-500/25 px-2.5 sm:px-3 py-1 text-indigo-300 flex items-center gap-1.5">
-              <span>🔌</span> Model Context Protocol (MCP)
-            </span>
-            <span className="rounded-lg bg-emerald-500/10 border border-emerald-500/25 px-2.5 sm:px-3 py-1 text-emerald-300 flex items-center gap-1.5">
-              <span>🚀</span> Groq, OpenRouter &amp; Ollama
-            </span>
-            <span className="rounded-lg bg-slate-800/80 border border-slate-700/60 px-2.5 sm:px-3 py-1 text-slate-300 flex items-center gap-1.5">
-              <span>🎨</span> UX by Snitch &amp; Next.js 16
-            </span>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-            <a
-              href="#contact"
-              className="glow-btn inline-flex items-center justify-center gap-2 rounded-full px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold tracking-wide shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all hover:scale-105 text-center"
-            >
-              <span>🚀 Start AI Project / Consultation</span>
-              <span className="text-xs font-mono">→</span>
-            </a>
-            <a
-              href="#work"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-sky-500/20 bg-slate-900/60 px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-slate-200 backdrop-blur-md transition-all hover:border-sky-400/50 hover:bg-sky-500/10 hover:text-sky-200 text-center"
-            >
-              <span>Explore Client &amp; GitHub Work</span>
-            </a>
-          </div>
-
-          {/* Trust Highlights & Telemetry Metrics */}
-          <div className="mt-6 sm:mt-10 grid grid-cols-3 gap-2 sm:gap-4 border-t border-slate-800/80 pt-4 sm:pt-6">
-            <div className="border-r border-slate-800/80 pr-1 sm:pr-3">
-              <span className="text-lg sm:text-2xl md:text-3xl font-black text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.3)]">
-                10x
-              </span>
-              <p className="mt-0.5 font-mono text-[10px] sm:text-xs font-medium text-slate-400">AI CODING SPEED</p>
-            </div>
-            <div className="border-r border-slate-800/80 pr-1 sm:pr-3">
-              <span className="text-lg sm:text-2xl md:text-3xl font-black text-indigo-400 drop-shadow-[0_0_8px_rgba(129,140,248,0.3)]">
-                MCP &amp; RAG
-              </span>
-              <p className="mt-0.5 font-mono text-[10px] sm:text-xs font-medium text-slate-400">AGENT WORKFLOWS</p>
-            </div>
-            <div>
-              <span className="text-lg sm:text-2xl md:text-3xl font-black text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]">
-                Actionable
-              </span>
-              <p className="mt-0.5 font-mono text-[10px] sm:text-xs font-medium text-slate-400">BUSINESS ROADMAPS</p>
-            </div>
-          </div>
+    <section id="top" className="relative mx-auto max-w-content px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 md:pt-28 pb-20 sm:pb-32">
+      {/* Hero Header Block */}
+      <div className="mx-auto max-w-5xl text-center">
+        {/* Subtle Announcement Pill */}
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-cyan-300 shadow-[0_0_30px_rgba(0,240,255,0.25)] backdrop-blur-xl">
+          <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>AI-Centric Development &bull; MCP Skills &bull; High-Velocity Web</span>
         </div>
 
-        {/* Right Column: Robotic AI Cockpit */}
-        <div className="flex flex-col justify-center">
-          <div className="glass-card relative overflow-hidden p-4 sm:p-6 md:p-7 shadow-2xl">
-            {/* Top Bar with HUD Telemetry */}
-            <div className="flex items-center justify-between border-b border-sky-500/15 pb-3 sm:pb-4">
-              <div className="flex items-center gap-2.5 sm:gap-3">
-                <Image
-                  src="/VT-tech-lab-transparent.png"
-                  alt="VT"
-                  width={28}
-                  height={28}
-                  className="drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]"
-                />
-                <span className="font-mono text-[11px] sm:text-xs font-bold text-slate-200 tracking-wider">
-                  VT_AI_COCKPIT // RUNTIME
-                </span>
-              </div>
-              <span className="rounded-md bg-emerald-500/10 border border-emerald-500/30 px-2 sm:px-2.5 py-0.5 font-mono text-[10px] sm:text-[11px] font-semibold text-emerald-400 flex items-center gap-1.5 shadow-[0_0_8px_rgba(16,185,129,0.15)]">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                ONLINE
+        {/* Hero Title */}
+        <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold tracking-tight text-white leading-[1.04]">
+          Engineering intelligent <span className="text-gradient-cyan">AI systems</span> &amp; high-velocity <span className="text-gradient-emerald">web products</span>.
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mt-8 text-xl sm:text-2xl md:text-3xl text-slate-200 leading-snug max-w-4xl mx-auto font-normal">
+          We combine <strong>AI assistant coding</strong> (Claude Code, Antigravity, Codex) with full-stack mastery. Fast <em>&quot;learning by doing&quot;</em> MVPs, custom <strong>MCP agent tools</strong>, and actionable <strong>business AI roadmaps</strong>.
+        </p>
+
+        {/* Action CTAs */}
+        <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+          <a
+            href="#contact"
+            className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full px-10 py-4.5 text-base sm:text-lg font-bold shadow-2xl"
+          >
+            <span>Start a Project with VT Tech Lab</span>
+            <span>→</span>
+          </a>
+          <a
+            href="#work"
+            className="btn-ghost w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full px-9 py-4.5 text-base sm:text-lg font-semibold"
+          >
+            <span>View Client Case Studies</span>
+          </a>
+        </div>
+
+        {/* Stats Strip */}
+        <div className="mt-16 sm:mt-24 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 border-y border-white/[0.08] py-8 sm:py-12 text-left">
+          <div>
+            <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">10x</div>
+            <div className="mt-1.5 text-xs sm:text-sm text-slate-300 font-semibold tracking-wide uppercase">AI Velocity</div>
+          </div>
+          <div>
+            <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-cyan-400 tracking-tight">MCP &amp; RAG</div>
+            <div className="mt-1.5 text-xs sm:text-sm text-slate-300 font-semibold tracking-wide uppercase">Agent Tools</div>
+          </div>
+          <div>
+            <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-emerald-400 tracking-tight">&lt; 500ms</div>
+            <div className="mt-1.5 text-xs sm:text-sm text-slate-300 font-semibold tracking-wide uppercase">Groq LPU Speed</div>
+          </div>
+          <div>
+            <div className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-indigo-400 tracking-tight">100%</div>
+            <div className="mt-1.5 text-xs sm:text-sm text-slate-300 font-semibold tracking-wide uppercase">Direct Founder</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Interactive Studio Showcase */}
+      <div className="mt-16 sm:mt-24 mx-auto max-w-5xl">
+        <div className="studio-card p-6 sm:p-10 md:p-12">
+          {/* Header & Tabs */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
+            <div>
+              <span className="text-xs sm:text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider">
+                Interactive Showcase
               </span>
+              <h3 className="mt-1.5 text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Live Capabilities &amp; Stack
+              </h3>
             </div>
 
-            {/* Showcase Tabs */}
-            <div className="mt-4 sm:mt-5 grid grid-cols-3 gap-1 sm:gap-2 rounded-lg bg-slate-950/80 p-1 sm:p-1.5 border border-slate-800">
+            {/* Tabs */}
+            <div className="flex gap-2 rounded-full bg-white/[0.04] p-1.5 border border-white/[0.08] self-start sm:self-auto">
               {showcaseModes.map((mode) => (
                 <button
                   key={mode.id}
                   onClick={() => setActiveTab(mode.id as any)}
-                  className={`rounded-md py-1.5 sm:py-2 px-1 text-[10px] sm:text-xs font-mono font-semibold text-center transition-all duration-200 truncate ${
+                  className={`rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-all ${
                     activeTab === mode.id
-                      ? "bg-sky-500/20 border border-sky-400/40 text-sky-200 shadow-[0_0_12px_rgba(14,165,233,0.2)]"
-                      : "text-slate-400 hover:text-slate-200"
+                      ? "bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(0,240,255,0.45)]"
+                      : "text-slate-300 hover:text-white"
                   }`}
                 >
-                  <span className="sm:hidden">{mode.label}</span>
-                  <span className="hidden sm:inline">{mode.fullLabel}</span>
+                  <span className="mr-1.5">{mode.icon}</span>
+                  {mode.label}
                 </button>
               ))}
             </div>
+          </div>
 
-            {/* TAB 1: AI, MCP & Models */}
-            {activeTab === "ai" && (
-              <div className="mt-4 sm:mt-5 space-y-3 sm:space-y-4">
-                <div className="glass-panel p-3.5 sm:p-5">
-                  <div className="flex items-center justify-between border-b border-sky-500/15 pb-2.5 sm:pb-3">
-                    <div className="flex items-center gap-2">
-                      <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-md bg-indigo-500/20 border border-indigo-400/30 text-[10px] sm:text-[11px] font-mono font-bold text-indigo-300">
-                        AI
-                      </div>
-                      <span className="text-xs font-semibold text-slate-200">
-                        {activeAiDemo.fullTag}
-                      </span>
-                    </div>
-                    <span className="rounded bg-indigo-500/10 border border-indigo-500/25 px-2 py-0.5 font-mono text-[9px] sm:text-[10px] text-indigo-300">
-                      {activeAiDemo.model}
+          {/* TAB 1: AI & MCP Capabilities */}
+          {activeTab === "ai" && (
+            <div className="mt-8 sm:mt-10 grid gap-6 md:grid-cols-2">
+              {aiCapabilities.map((item, i) => (
+                <div
+                  key={item.title}
+                  className="studio-panel p-6 sm:p-8 transition-all hover:border-cyan-500/40"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className={`badge-pill border text-xs sm:text-sm font-semibold ${item.badgeColor}`}>
+                      {item.badge}
                     </span>
+                    <span className="text-xs sm:text-sm font-mono text-slate-400 font-bold">0{i + 1}</span>
                   </div>
+                  <h4 className="mt-4 text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    {item.title}
+                  </h4>
+                  <p className="mt-1 text-xs sm:text-sm font-mono text-cyan-300 font-semibold">
+                    {item.tool}
+                  </p>
+                  <p className="mt-3 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+                    {item.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
 
-                  {/* Interactive AI Query Selector */}
-                  <div className="mt-3 flex gap-1.5 overflow-x-auto pb-1 scrollbar-none">
-                    {aiDemos.map((demo, idx) => (
-                      <button
-                        key={demo.tag}
-                        onClick={() => setSelectedAiIndex(idx)}
-                        className={`rounded-md px-2 sm:px-2.5 py-1 text-[10px] font-mono font-medium transition-all whitespace-nowrap ${
-                          selectedAiIndex === idx
-                            ? "bg-sky-500/20 border border-sky-400/50 text-sky-200 shadow-[0_0_8px_rgba(14,165,233,0.2)]"
-                            : "bg-slate-900/80 border border-slate-800 text-slate-400 hover:text-slate-200"
-                        }`}
-                      >
-                        {demo.tag}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Query Preview */}
-                  <div className="mt-3 space-y-2.5 sm:space-y-3 font-sans text-xs">
-                    <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-2.5 sm:p-3">
-                      <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase text-sky-400 tracking-wider">
-                        // QUERY INPUT:
-                      </span>
-                      <p className="mt-1 font-medium text-slate-200 text-xs sm:text-sm">&quot;{activeAiDemo.query}&quot;</p>
-                    </div>
-
-                    <div className="rounded-lg border border-indigo-500/25 bg-indigo-950/20 p-3 sm:p-3.5 shadow-[0_0_15px_rgba(99,102,241,0.08)]">
-                      <div className="flex items-center justify-between text-[9px] sm:text-[10px] font-mono font-semibold text-indigo-300">
-                        <span>// ACTIONABLE AI BLUEPRINT:</span>
-                        <span className="text-emerald-400 font-bold">READY</span>
-                      </div>
-                      <p className="mt-1.5 sm:mt-2 text-xs leading-relaxed text-slate-200">
-                        {activeAiDemo.answer}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Tooling Tags */}
-                  <div className="mt-3 sm:mt-4 flex flex-wrap gap-1 sm:gap-1.5">
-                    {["Claude Code", "Google Antigravity", "Codex", "MCP Skills", "Groq LPU", "Ollama", "OpenRouter"].map((t) => (
-                      <span
-                        key={t}
-                        className="rounded border border-slate-800 bg-slate-900/90 px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-mono text-sky-300"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+          {/* TAB 2: Live Client Apps */}
+          {activeTab === "apps" && (
+            <div className="mt-8 sm:mt-10 space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <span className="text-base font-semibold text-slate-300">
+                  Select Production Client Project:
+                </span>
+                <div className="flex gap-2.5">
+                  {clientProjects.map((p, idx) => (
+                    <button
+                      key={p.id}
+                      onClick={() => setSelectedClientIndex(idx)}
+                      className={`rounded-xl px-4 py-2 text-xs sm:text-sm font-bold transition-all ${
+                        selectedClientIndex === idx
+                          ? "bg-cyan-500 text-slate-950 shadow-[0_0_14px_rgba(0,240,255,0.35)]"
+                          : "bg-white/[0.05] text-slate-300 hover:text-white border border-white/[0.08]"
+                      }`}
+                    >
+                      {p.name.split("—")[0].trim()}
+                    </button>
+                  ))}
                 </div>
               </div>
-            )}
 
-            {/* TAB 2: Live Client Apps */}
-            {activeTab === "apps" && (
-              <div className="mt-4 sm:mt-5 space-y-3 sm:space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="font-mono text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
-                    // SELECT CLIENT BUILD:
-                  </span>
-                  <div className="flex gap-1.5 sm:gap-2">
-                    {clientProjects.map((p, idx) => (
-                      <button
-                        key={p.id}
-                        onClick={() => setSelectedClientIndex(idx)}
-                        className={`rounded-md px-2.5 sm:px-3 py-1 font-mono text-xs font-bold transition-all ${
-                          selectedClientIndex === idx
-                            ? "bg-sky-500/20 border border-sky-400 text-sky-200 shadow-[0_0_8px_rgba(14,165,233,0.3)]"
-                            : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-200"
-                        }`}
-                      >
-                        0{idx + 1}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Project Card */}
-                <div className="glass-panel p-3.5 sm:p-5 transition-all">
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <span className="inline-block rounded bg-sky-500/10 border border-sky-500/25 px-2 sm:px-2.5 py-0.5 font-mono text-[10px] sm:text-[11px] font-semibold text-sky-300">
+              <div className="studio-panel p-7 sm:p-10">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2.5">
+                      <span className="badge-pill bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-xs sm:text-sm font-semibold">
+                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Live in Production
+                      </span>
+                      <span className="text-xs sm:text-sm text-slate-400 font-mono">
                         {activeProject.category}
                       </span>
-                      <h3 className="mt-1.5 sm:mt-2 text-sm sm:text-base md:text-lg font-bold text-slate-100">
-                        {activeProject.name}
-                      </h3>
-                      <p className="font-mono text-[11px] sm:text-xs text-indigo-300">
-                        Client: {activeProject.client}
-                      </p>
+                    </div>
+                    <h4 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+                      {activeProject.name}
+                    </h4>
+                    <p className="mt-1 text-xs sm:text-sm font-semibold text-cyan-300 font-mono">
+                      Client: {activeProject.client}
+                    </p>
+                    <p className="mt-4 text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl">
+                      {activeProject.summary}
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap gap-2.5">
+                      {activeProject.stack.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full bg-white/[0.05] border border-white/[0.08] px-3.5 py-1 text-xs sm:text-sm font-mono text-slate-200 font-medium"
+                        >
+                          {t}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
-                  <p className="mt-2.5 sm:mt-3 text-xs leading-relaxed text-slate-300">
-                    {activeProject.summary}
-                  </p>
-
-                  <div className="mt-3 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">
-                    {activeProject.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded border border-slate-800 bg-slate-900/90 px-2 py-0.5 text-[10px] sm:text-[11px] font-mono text-sky-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-between gap-2 sm:gap-3 border-t border-slate-800 pt-3 sm:pt-4">
-                    <span className="text-[10px] sm:text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                      {activeProject.highlight}
-                    </span>
+                  <div className="flex flex-col items-start md:items-end gap-3 pt-5 md:pt-0 border-t md:border-t-0 border-white/[0.08]">
                     <a
                       href={activeProject.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="glow-btn inline-flex items-center gap-1.5 rounded-full px-3.5 sm:px-4 py-1 sm:py-1.5 text-xs font-semibold shadow-[0_0_12px_rgba(14,165,233,0.3)]"
+                      className="btn-primary rounded-full px-7 py-3.5 text-sm font-bold inline-flex items-center gap-2 shadow-lg"
                     >
-                      <span>Live Site</span>
-                      <span className="font-mono">↗</span>
+                      <span>Launch App</span>
+                      <span>↗</span>
                     </a>
+                    <span className="text-xs sm:text-sm text-slate-400 font-mono">
+                      {activeProject.linkLabel}
+                    </span>
                   </div>
                 </div>
               </div>
-            )}
-
-            {/* TAB 3: GitHub & Systems */}
-            {activeTab === "systems" && (
-              <div className="mt-4 sm:mt-5 space-y-3 sm:space-y-4">
-                <div className="glass-panel p-3.5 sm:p-5">
-                  <h4 className="font-mono text-xs sm:text-sm font-bold text-sky-300">
-                    // FEATURED GITHUB &amp; SYSTEMS
-                  </h4>
-                  <p className="mt-1 text-[10px] sm:text-xs text-slate-300">
-                    Production engines with AI biometrics, Groq LPUs, and enterprise microservices.
-                  </p>
-
-                  <div className="mt-3 sm:mt-4 grid grid-cols-2 gap-2 sm:gap-3 text-xs">
-                    <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-2 sm:p-3">
-                      <span className="text-[8px] sm:text-[10px] font-mono font-bold text-sky-400 uppercase">Biometrics &amp; Java</span>
-                      <p className="mt-0.5 font-bold text-slate-100 text-[11px] sm:text-sm">HabitProof Engine</p>
-                      <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">ArcFace + Spring Boot</span>
-                    </div>
-                    <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-2 sm:p-3">
-                      <span className="text-[8px] sm:text-[10px] font-mono font-bold text-indigo-400 uppercase">AI Job Kanban</span>
-                      <p className="mt-0.5 font-bold text-slate-100 text-[11px] sm:text-sm">AI Job Tracker</p>
-                      <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">Groq + OpenRouter</span>
-                    </div>
-                    <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-2 sm:p-3">
-                      <span className="text-[8px] sm:text-[10px] font-mono font-bold text-sky-400 uppercase">Telegram AI Tutor</span>
-                      <p className="mt-0.5 font-bold text-slate-100 text-[11px] sm:text-sm">CBSE-Bot (RAG)</p>
-                      <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">ChromaDB + LangChain</span>
-                    </div>
-                    <div className="rounded-lg border border-slate-800 bg-slate-950/80 p-2 sm:p-3">
-                      <span className="text-[8px] sm:text-[10px] font-mono font-bold text-emerald-400 uppercase">Event Streaming</span>
-                      <p className="mt-0.5 font-bold text-slate-100 text-[11px] sm:text-sm">Kafka Microservices</p>
-                      <span className="text-[9px] sm:text-[10px] font-mono text-slate-400">Java 21 + Ollama</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Footer Telemetry Trust Bar */}
-            <div className="mt-3 sm:mt-4 flex flex-wrap items-center justify-between gap-1.5 font-mono text-[10px] sm:text-xs font-medium text-slate-400 border-t border-slate-800/60 pt-2.5">
-              <span className="flex items-center gap-1.5 text-sky-300">
-                <span className="h-1.5 w-1.5 rounded-full bg-sky-400 shadow-[0_0_6px_#38BDF8]"></span>
-                Learning by Doing &bull; Direct Founder Delivery
-              </span>
-              <span className="text-slate-500">[ MILESTONE_SCOPED ]</span>
             </div>
-          </div>
+          )}
+
+          {/* TAB 3: GitHub Open Systems */}
+          {activeTab === "systems" && (
+            <div className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2">
+              <div className="studio-panel p-6 sm:p-8">
+                <span className="text-xs sm:text-sm font-mono font-bold text-cyan-400 uppercase tracking-wide">
+                  Biometric Facial Proof Engine
+                </span>
+                <h4 className="mt-3 text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  HabitProof Engine
+                </h4>
+                <p className="mt-2.5 text-base sm:text-lg text-slate-300 leading-relaxed">
+                  ArcFace AI biometrics with Java 21 Spring Boot and MinIO containerized snapshots for habit verification.
+                </p>
+                <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/[0.08]">
+                  <span className="text-xs sm:text-sm font-mono text-slate-400">Spring Boot + Next.js</span>
+                  <a
+                    href="https://github.com/ahiwalevikrant/Habit-Proof"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold text-cyan-300 hover:underline inline-flex items-center gap-1.5"
+                  >
+                    View Repo ↗
+                  </a>
+                </div>
+              </div>
+
+              <div className="studio-panel p-6 sm:p-8">
+                <span className="text-xs sm:text-sm font-mono font-bold text-indigo-400 uppercase tracking-wide">
+                  Groq &amp; OpenRouter Intelligence
+                </span>
+                <h4 className="mt-3 text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  AI Job Application Tracker
+                </h4>
+                <p className="mt-2.5 text-base sm:text-lg text-slate-300 leading-relaxed">
+                  Local-first Kanban dashboard with sub-second Groq resume analysis and OpenRouter cover letter generation.
+                </p>
+                <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/[0.08]">
+                  <span className="text-xs sm:text-sm font-mono text-slate-400">React 19 + Groq API</span>
+                  <a
+                    href="https://github.com/ahiwalevikrant/ai-job-application-tracker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold text-indigo-300 hover:underline inline-flex items-center gap-1.5"
+                  >
+                    View Repo ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

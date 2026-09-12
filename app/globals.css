@@ -22,25 +22,26 @@ html {
   }
 }
 
-/* Futuristic / Robotic Deep Neural Matrix Background */
+/* World-Class Studio Canvas: Deep Titanium Charcoal with Soft Cosmic Spotlights */
 body {
-  background-color: #030712;
-  color: #E2E8F0;
+  background-color: #070913;
+  color: #F1F5F9;
   background-image:
-    /* Diffused Neural Ambient Glows */
-    radial-gradient(circle at 50% -10%, rgba(14, 165, 233, 0.12), transparent 55%),
-    radial-gradient(circle at 85% 25%, rgba(99, 102, 241, 0.08), transparent 45%),
-    radial-gradient(circle at 15% 65%, rgba(16, 185, 129, 0.06), transparent 45%),
-    /* Robotic Cyber Grid Mesh */
-    linear-gradient(to right, rgba(56, 189, 248, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(56, 189, 248, 0.025) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    /* Top Center Luminous Aura Spotlight */
+    radial-gradient(ellipse 90% 40% at 50% -10%, rgba(56, 189, 248, 0.14), transparent 60%),
+    /* Secondary Indigo Spotlight */
+    radial-gradient(ellipse 70% 50% at 85% 25%, rgba(99, 102, 241, 0.1), transparent 50%),
+    /* Emerald Ambience */
+    radial-gradient(circle at 10% 60%, rgba(16, 185, 129, 0.07), transparent 45%),
+    /* Subtle Studio Dot Grid */
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
   background-attachment: fixed;
 }
 
 ::selection {
-  background-color: #38BDF8;
-  color: #030712;
+  background-color: #00F0FF;
+  color: #070913;
 }
 
 /* Keyboard focus ring */
@@ -49,78 +50,112 @@ button:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid #38BDF8;
   outline-offset: 3px;
-  border-radius: 6px;
+  border-radius: 9999px;
 }
 
-/* Sleek Cyber Scrollbar */
+/* Sleek Minimalist Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #070913;
 }
 ::-webkit-scrollbar-thumb {
   background: #1E293B;
-  border-radius: 3px;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #38BDF8;
 }
 
-/* Robotic Cyber Glass Card */
-.glass-card {
-  background: linear-gradient(145deg, rgba(8, 14, 28, 0.88) 0%, rgba(4, 8, 18, 0.95) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.12);
-  border-radius: 0.875rem;
-  backdrop-filter: blur(18px);
-  position: relative;
+/* Premium Bento Studio Card */
+.studio-card {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.75) 0%, rgba(11, 17, 30, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-card:hover {
+.studio-card:hover {
   border-color: rgba(56, 189, 248, 0.35);
+  border-top-color: rgba(56, 189, 248, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px rgba(14, 165, 233, 0.15), inset 0 1px 0 rgba(56, 189, 248, 0.2);
+  box-shadow: 0 20px 40px -15px rgba(0, 240, 255, 0.15);
 }
 
-.glass-panel {
-  background: rgba(10, 18, 34, 0.7);
-  border: 1px solid rgba(56, 189, 248, 0.1);
-  border-radius: 0.75rem;
-  backdrop-filter: blur(14px);
+/* Studio Glass Panel for inner containers */
+.studio-panel {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
 }
 
-/* Subtle Soothing Text Gradients */
+/* Clean High-End Typography Gradients */
+.text-shimmer {
+  background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #E0F2FE 0%, #38BDF8 50%, #818CF8 100%);
+  background: linear-gradient(135deg, #FFFFFF 20%, #38BDF8 60%, #818CF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-vibrant {
-  background: linear-gradient(135deg, #F0FDF4 0%, #34D399 35%, #38BDF8 70%, #A78BFA 100%);
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #FFFFFF 20%, #34D399 60%, #38BDF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Cybernetic Glow Button - Calmed & Eye-Soothing */
-.glow-btn {
-  background: linear-gradient(135deg, #0284C7 0%, #2563EB 55%, #4F46E5 100%);
-  color: #F8FAFC;
-  box-shadow: 0 0 18px rgba(14, 165, 233, 0.25);
-  transition: all 0.3s ease;
+/* High-Converting Primary Studio Button */
+.btn-primary {
+  background: linear-gradient(180deg, #0EA5E9 0%, #0284C7 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glow-btn:hover {
-  filter: brightness(1.12);
-  box-shadow: 0 0 24px rgba(56, 189, 248, 0.45);
+.btn-primary:hover {
+  background: linear-gradient(180deg, #38BDF8 0%, #0EA5E9 100%);
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
 }
 
-/* HUD Telemetry Tag Badge */
-.hud-tag {
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+/* Ghost Studio Button */
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: #E2E8F0;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Clean Badge Pill */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 /* Scrollbar Utility */

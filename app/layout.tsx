@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const plexSans = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-plex-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-plex-mono",
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "VT Tech Lab — AI-Centric Development, MCP Skills & Software Engineering",
+  title: "VT Tech Lab — AI-Centric Engineering & Modern Web Studio",
   description:
-    "VT Tech Lab architects and builds production AI systems, custom MCP skills, high-speed open model pipelines (Groq, OpenRouter, Ollama), and full-stack web applications with Next.js and Java Spring Boot.",
+    "VT Tech Lab architects and builds production AI systems, custom MCP skills, high-speed open model pipelines (Groq, OpenRouter, Ollama), and modern full-stack web applications.",
   icons: {
     icon: "/VT-tech-lab-transparent.png",
     apple: "/VT-tech-lab-transparent.png",
@@ -32,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plexSans.variable} ${plexMono.variable} scroll-smooth`}>
-      <body className="font-sans antialiased overflow-x-hidden bg-[#050811] text-[#F8FAFC] selection:bg-cyan-400 selection:text-slate-950">
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
+      <body className="font-sans antialiased overflow-x-hidden bg-[#070913] text-slate-100 selection:bg-cyan-500 selection:text-slate-950">
         {children}
       </body>
     </html>
