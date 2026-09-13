@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
+}
+
+.dark {
   color-scheme: dark;
 }
 
@@ -22,24 +26,46 @@ html {
   }
 }
 
-/* World-Class Studio Canvas: Deep Titanium Charcoal with Soft Cosmic Spotlights */
+/* Base Light Theme Canvas: Crisp Pure White with Subtle Ambient Accents */
 body {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  background-image:
+    /* Top Center Luminous Cyan Aura */
+    radial-gradient(ellipse 90% 45% at 50% -10%, rgba(14, 165, 233, 0.08), transparent 60%),
+    /* Secondary Soft Sapphire */
+    radial-gradient(ellipse 70% 50% at 85% 25%, rgba(11, 25, 44, 0.04), transparent 50%),
+    /* Emerald Ambience */
+    radial-gradient(circle at 10% 60%, rgba(16, 185, 129, 0.04), transparent 45%),
+    /* Subtle Light Dot Grid */
+    radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+  background-attachment: fixed;
+}
+
+/* Dark Theme Canvas: Deep Cosmic Titanium & Navy */
+.dark body {
   background-color: #070913;
   color: #F1F5F9;
   background-image:
-    /* Top Center Luminous Aura Spotlight */
+    /* Top Center Cosmic Cyan Aura */
     radial-gradient(ellipse 90% 40% at 50% -10%, rgba(56, 189, 248, 0.14), transparent 60%),
     /* Secondary Indigo Spotlight */
     radial-gradient(ellipse 70% 50% at 85% 25%, rgba(99, 102, 241, 0.1), transparent 50%),
     /* Emerald Ambience */
     radial-gradient(circle at 10% 60%, rgba(16, 185, 129, 0.07), transparent 45%),
-    /* Subtle Studio Dot Grid */
+    /* Subtle Dark Dot Grid */
     radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
   background-attachment: fixed;
 }
 
 ::selection {
+  background-color: #0284C7;
+  color: #FFFFFF;
+}
+
+.dark ::selection {
   background-color: #00F0FF;
   color: #070913;
 }
@@ -48,102 +74,224 @@ body {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #38BDF8;
+  outline: 2px solid #0284C7;
   outline-offset: 3px;
   border-radius: 9999px;
 }
 
-/* Sleek Minimalist Scrollbar */
+.dark a:focus-visible,
+.dark button:focus-visible,
+.dark [tabindex]:focus-visible {
+  outline: 2px solid #38BDF8;
+}
+
+/* Minimalist Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #070913;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #070913;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #38BDF8;
 }
 
-/* Premium Bento Studio Card */
+/* Bento Studio Card */
 .studio-card {
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.75) 0%, rgba(11, 17, 30, 0.85) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 1.25rem;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 24px -2px rgba(15, 23, 42, 0.05), 0 1px 3px 0 rgba(15, 23, 42, 0.03);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .studio-card:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -8px rgba(2, 132, 199, 0.14), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+.dark .studio-card {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.75) 0%, rgba(11, 17, 30, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .studio-card:hover {
   border-color: rgba(56, 189, 248, 0.35);
   border-top-color: rgba(56, 189, 248, 0.6);
   transform: translateY(-2px);
   box-shadow: 0 20px 40px -15px rgba(0, 240, 255, 0.15);
 }
 
-/* Studio Glass Panel for inner containers */
+/* Glass Card */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(2, 132, 199, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -6px rgba(2, 132, 199, 0.12);
+}
+
+.dark .glass-card {
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+
+.dark .glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 15px 30px -10px rgba(0, 240, 255, 0.12);
+}
+
+/* Studio Panel */
 .studio-panel {
+  background: #F8FAFC;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 1rem;
+}
+
+.dark .studio-panel {
   background: rgba(15, 23, 42, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 1rem;
 }
 
 /* Clean High-End Typography Gradients */
 .text-shimmer {
+  background: linear-gradient(180deg, #0B192C 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-shimmer {
   background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-cyan {
+  background: linear-gradient(135deg, #0B192C 10%, #0284C7 60%, #00B4D8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient-cyan {
   background: linear-gradient(135deg, #FFFFFF 20%, #38BDF8 60%, #818CF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-emerald {
+  background: linear-gradient(135deg, #0B192C 10%, #059669 60%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient-emerald {
   background: linear-gradient(135deg, #FFFFFF 20%, #34D399 60%, #38BDF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* High-Converting Primary Studio Button */
+/* Universal Button Metrics: Robust padding and sizing so buttons never look squished or shrunk */
 .btn-primary {
-  background: linear-gradient(180deg, #0EA5E9 0%, #0284C7 100%);
-  color: #FFFFFF;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 20px rgba(14, 165, 233, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  min-height: 3rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0B192C 0%, #0284C7 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  line-height: 1.25;
+  border: 1px solid rgba(2, 132, 199, 0.3);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #38BDF8 0%, #0EA5E9 100%);
-  box-shadow: 0 0 30px rgba(14, 165, 233, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #0F172A 0%, #0369A1 100%);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
 }
 
-/* Ghost Studio Button */
+.dark .btn-primary {
+  background: linear-gradient(180deg, #0EA5E9 0%, #0284C7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.dark .btn-primary:hover {
+  background: linear-gradient(180deg, #38BDF8 0%, #0EA5E9 100%);
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Ghost Button */
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.04);
-  color: #E2E8F0;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  min-height: 3rem;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  color: #0F172A;
+  font-weight: 600;
+  line-height: 1.25;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-ghost:hover {
+  background: #F8FAFC;
+  border-color: #94A3B8;
+  color: #0284C7;
+  transform: translateY(-1px);
+}
+
+.dark .btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: #E2E8F0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
+.dark .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
-  transform: translateY(-1px);
 }
 
 /* Clean Badge Pill */

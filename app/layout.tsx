@@ -32,8 +32,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="font-sans antialiased overflow-x-hidden bg-[#070913] text-slate-100 selection:bg-cyan-500 selection:text-slate-950">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
+      <body className="font-sans antialiased overflow-x-hidden bg-white text-slate-900 dark:bg-[#070913] dark:text-slate-100 selection:bg-sky-500 selection:text-white transition-colors duration-300">
         {children}
       </body>
     </html>

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,20 +10,28 @@ const config: Config = {
     extend: {
       colors: {
         dark: {
-          950: "#070913",
-          900: "#0D111F",
-          850: "#12182B",
-          800: "#182038",
-          700: "#222D4D",
-          border: "rgba(255, 255, 255, 0.08)",
+          950: "#0B192C",
+          900: "#0F172A",
+          850: "#1E293B",
+          800: "#334155",
+          700: "#475569",
+          border: "rgba(15, 23, 42, 0.08)",
+        },
+        brand: {
+          navy: "#0B192C",
+          midnight: "#0F172A",
+          cyan: "#00D2FF",
+          sky: "#0284C7",
+          electric: "#0EA5E9",
+          light: "#F8FAFC",
         },
         accent: {
-          cyan: "#00F0FF",
-          sky: "#38BDF8",
-          blue: "#3B82F6",
-          indigo: "#6366F1",
-          purple: "#A855F7",
-          emerald: "#10B981",
+          cyan: "#00D2FF",
+          sky: "#0284C7",
+          blue: "#2563EB",
+          indigo: "#4F46E5",
+          purple: "#9333EA",
+          emerald: "#059669",
         },
       },
       fontFamily: {
@@ -33,14 +42,16 @@ const config: Config = {
         content: "1280px",
       },
       boxShadow: {
-        'glow-cyan': '0 0 30px -5px rgba(0, 240, 255, 0.25)',
-        'glow-indigo': '0 0 30px -5px rgba(99, 102, 241, 0.25)',
-        'glow-emerald': '0 0 30px -5px rgba(16, 185, 129, 0.25)',
+        'glow-cyan': '0 0 30px -5px rgba(2, 132, 199, 0.25)',
+        'glow-indigo': '0 0 30px -5px rgba(79, 70, 229, 0.2)',
+        'glow-emerald': '0 0 30px -5px rgba(5, 150, 105, 0.2)',
+        'card-light': '0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 1px 3px 0 rgba(15, 23, 42, 0.04)',
+        'card-hover': '0 16px 36px -8px rgba(2, 132, 199, 0.16), 0 4px 12px -2px rgba(15, 23, 42, 0.04)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #38BDF8 0%, #3B82F6 50%, #8B5CF6 100%)',
-        'card-gradient': 'linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #0B192C 0%, #0284C7 50%, #00D2FF 100%)',
+        'card-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
       },
     },
   },

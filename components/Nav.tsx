@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { profile } from "@/lib/content";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "#services", label: "Services" },
@@ -18,7 +19,7 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 px-4 sm:px-6 lg:px-8 pt-3 pb-2 transition-all">
-      <nav className="mx-auto flex max-w-content items-center justify-between rounded-full border border-white/[0.08] bg-[#0A0D1A]/80 px-4 sm:px-6 py-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-2xl">
+      <nav className="mx-auto flex max-w-content items-center justify-between rounded-full border border-slate-200/90 dark:border-white/[0.08] bg-white/90 dark:bg-[#0A0D1A]/85 px-4 sm:px-6 py-2.5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl transition-colors duration-300">
         {/* Brand Logo */}
         <a href="#top" className="group flex items-center gap-3">
           <div className="relative h-9 w-9 shrink-0 transition-transform duration-300 group-hover:scale-105">
@@ -27,33 +28,33 @@ export default function Nav() {
               alt="VT Tech Lab"
               width={36}
               height={36}
-              className="h-full w-full object-contain drop-shadow-[0_0_12px_rgba(56,189,248,0.6)]"
+              className="h-full w-full object-contain drop-shadow-[0_2px_8px_rgba(2,132,199,0.3)] dark:drop-shadow-[0_0_12px_rgba(56,189,248,0.6)]"
               priority
             />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <span className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
+              <span className="text-base sm:text-lg font-bold tracking-tight text-slate-950 dark:text-white group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition-colors">
                 VT Tech Lab
               </span>
-              <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400 border border-emerald-500/20">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
                 Available
               </span>
             </div>
-            <span className="hidden sm:block text-[10px] font-mono text-slate-400">
+            <span className="hidden sm:block text-[10px] font-mono text-slate-500 dark:text-slate-400 font-medium">
               AI-Centric Development &bull; Software Studio
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden gap-2 font-sans text-sm font-semibold text-slate-300 lg:flex items-center">
+        <ul className="hidden gap-1 font-sans text-sm font-semibold text-slate-600 dark:text-slate-300 lg:flex items-center">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="rounded-full px-4 py-2 transition-all duration-200 hover:text-white hover:bg-white/[0.08]"
+                className="rounded-full px-3.5 py-2 transition-all duration-200 hover:text-sky-700 dark:hover:text-white hover:bg-slate-100/90 dark:hover:bg-white/[0.08]"
               >
                 {link.label}
               </a>
@@ -62,38 +63,40 @@ export default function Nav() {
         </ul>
 
         {/* Desktop Action CTAs */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
           <a
             href={profile.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs sm:text-sm font-bold text-emerald-300 transition-all hover:bg-emerald-500 hover:text-slate-950 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-4 py-2 text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-300 transition-all hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 hover:shadow-[0_4px_16px_rgba(16,185,129,0.25)]"
           >
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
             WhatsApp
           </a>
           <a
             href="#contact"
-            className="btn-primary rounded-full px-5 py-2 text-xs sm:text-sm font-bold tracking-wide"
+            className="btn-primary rounded-full px-5 !py-2 text-xs sm:text-sm font-bold tracking-wide !min-h-0"
           >
             Start Project
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Actions */}
         <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
           <a
             href={profile.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center h-8 w-8 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs"
+            className="flex items-center justify-center h-9 w-9 rounded-full bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs"
             aria-label="WhatsApp"
           >
             💬
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 hover:text-white"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
@@ -111,34 +114,34 @@ export default function Nav() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="mt-2 mx-auto max-w-content rounded-2xl border border-white/[0.08] bg-[#0A0D1A]/95 p-6 shadow-2xl backdrop-blur-2xl lg:hidden">
+        <div className="mt-2 mx-auto max-w-content rounded-2xl border border-slate-200/90 dark:border-white/[0.08] bg-white/95 dark:bg-[#0A0D1A]/95 p-6 shadow-2xl backdrop-blur-2xl lg:hidden">
           <ul className="space-y-1.5 font-sans text-base font-semibold">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block rounded-xl px-4 py-2.5 text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-cyan-400"
+                  className="block rounded-xl px-4 py-2.5 text-slate-700 dark:text-slate-200 transition-colors hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:text-sky-600 dark:hover:text-cyan-400"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="mt-5 flex flex-col gap-3 border-t border-white/[0.08] pt-5">
+          <div className="mt-5 flex flex-col gap-3 border-t border-slate-200 dark:border-white/[0.08] pt-5">
             <a
               href={profile.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 py-3 text-sm font-bold text-emerald-300"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 py-3.5 text-sm font-bold text-emerald-700 dark:text-emerald-300"
             >
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
               WhatsApp (+91 9325307637)
             </a>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="btn-primary flex w-full items-center justify-center rounded-xl py-3 text-sm font-bold"
+              className="btn-primary flex w-full items-center justify-center rounded-xl py-3.5 text-sm font-bold !min-h-[48px]"
             >
               Start AI Project / Consultation
             </a>
