@@ -4,136 +4,82 @@ import { SectionHeading } from "@/components/Skills";
 
 export default function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-content px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-      <SectionHeading title="Start an AI Project / Hire VT Tech Lab" />
-      
-      <div className="mt-16 grid gap-12 lg:grid-cols-[1.15fr_0.85fr] items-start">
-        {/* Left Column: Direct Pitch & Action Buttons */}
-        <div>
-          <span className="badge-pill bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 text-xs sm:text-sm font-semibold">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
-            Available for New AI Projects &amp; Web Builds
-          </span>
+    <section id="contact" className="mx-auto max-w-content px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <SectionHeading title="Start a Project" />
 
-          <h3 className="mt-6 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 dark:text-white leading-tight">
+      <div className="mt-10 studio-card p-8 sm:p-12 border border-slate-200/90 dark:border-cyan-500/30">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 px-3 py-1 text-xs font-semibold">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
+            Available for Q3 &bull; Direct Founder Delivery
+          </div>
+
+          <h3 className="mt-5 text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white">
             Let&apos;s build your next intelligent product.
           </h3>
 
-          <p className="mt-6 max-w-2xl text-xl sm:text-2xl leading-snug text-slate-600 dark:text-slate-200 font-normal">
-            Need an actionable business AI roadmap, custom MCP agent integration, or production-grade Next.js web platform? Transparent milestone pricing, rapid sprint delivery, and direct founder execution.
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+            Rapid sprints, fixed milestone pricing, and direct communication. Response time within 4 hours.
           </p>
 
-          {/* Action CTAs with generous padding and robust height */}
-          <div className="mt-10 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 sm:gap-5">
+          {/* Action CTAs */}
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <a
               href={profile.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-emerald-600 dark:bg-emerald-500 px-8 py-4 text-base sm:text-lg font-bold text-white dark:text-slate-950 shadow-[0_4px_20px_rgba(16,185,129,0.35)] transition-all hover:bg-emerald-700 dark:hover:bg-emerald-400 hover:scale-105 min-h-[52px]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 dark:bg-emerald-500 px-6 py-3 text-sm sm:text-base font-bold text-white dark:text-slate-950 shadow-md transition-all hover:bg-emerald-700 dark:hover:bg-emerald-400 min-h-[44px]"
             >
-              <span>💬 Chat on WhatsApp</span>
+              <span>💬 WhatsApp</span>
               <span>↗</span>
             </a>
 
             <a
-              href={`mailto:${profile.email}?subject=AI%20Project%20Inquiry%20-%20VT%20Tech%20Lab`}
-              className="btn-primary inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-base sm:text-lg font-bold min-h-[52px]"
+              href={`mailto:${profile.email}?subject=Project%20Inquiry%20-%20VT%20Tech%20Lab`}
+              className="btn-primary inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base font-bold min-h-[44px]"
             >
               <span>✉ {profile.email}</span>
             </a>
 
             <a
-              href={`tel:${profile.phone.replace(/\s+/g, "")}`}
-              className="btn-ghost inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-base sm:text-lg font-semibold min-h-[52px] dark:border-white/15"
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold min-h-[44px] dark:border-white/15"
             >
-              <span>📞 {profile.phone}</span>
+              <span>GitHub ↗</span>
             </a>
           </div>
-
-          <div className="mt-8 flex items-center gap-3 text-base text-slate-600 dark:text-slate-300 font-medium">
-            <span className="flex h-3 w-3 rounded-full bg-sky-500 animate-ping"></span>
-            <span>Direct founder response time: <strong className="text-slate-950 dark:text-white font-bold">Under 4 hours</strong>.</span>
-          </div>
-        </div>
-
-        {/* Right Column: Studio Dossier Card */}
-        <div className="studio-card p-8 sm:p-10">
-          <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/[0.08] pb-5">
-            <span className="text-sm font-mono font-bold text-sky-700 dark:text-cyan-400 uppercase tracking-wider">
-              Studio Dossier
-            </span>
-            <span className="badge-pill bg-slate-100 dark:bg-white/[0.05] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/[0.08] text-xs font-bold">
-              Verified Studio
-            </span>
-          </div>
-
-          <dl className="mt-7 space-y-4 text-base sm:text-lg">
-            <Row label="Studio" value={profile.firm} />
-            <Row label="Lead Engineer" value={profile.name} />
-            <Row label="Core Focus" value="AI-Centric Dev, MCP & Web Apps" />
-            <Row label="AI Workflows" value="Claude Code, Antigravity, Groq, Ollama" />
-            <Row label="Location" value={profile.location} />
-            <Row
-              label="GitHub"
-              value={profile.github.replace("https://", "")}
-              href={profile.github}
-            />
-            <Row
-              label="LinkedIn"
-              value="vikrant-ahiwale-7917a7268"
-              href={profile.linkedin}
-            />
-          </dl>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="mt-28 sm:mt-36 border-t border-slate-200 dark:border-white/[0.08] pt-12 sm:pt-16 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-4">
-          <div className="relative h-12 w-12 shrink-0">
+      <footer className="mt-16 sm:mt-24 border-t border-slate-200 dark:border-white/[0.08] pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        <div className="flex items-center gap-3">
+          <div className="relative h-7 w-7 shrink-0">
             <Image
               src="/VT-tech-lab-icon.png"
               alt="VT Tech Lab"
-              width={48}
-              height={48}
-              className="h-full w-full object-contain drop-shadow-[0_2px_8px_rgba(2,132,199,0.25)] dark:drop-shadow-[0_0_15px_rgba(56,189,248,0.7)]"
+              width={28}
+              height={28}
+              className="h-full w-full object-contain"
             />
           </div>
-          <div>
-            <p className="text-lg font-bold text-slate-950 dark:text-white">
-              © {new Date().getFullYear()} {profile.firm}
-            </p>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono">{profile.tagline}</p>
-          </div>
+          <span className="font-bold text-slate-950 dark:text-white">
+            © {new Date().getFullYear()} {profile.firm}
+          </span>
+          <span>&bull;</span>
+          <span>{profile.location}</span>
         </div>
 
-        <p className="text-sm sm:text-base text-slate-500 dark:text-slate-300 font-normal">
-          Engineered for Performance, Speed &amp; Maximum Client Conversion.
+        <p className="font-mono text-xs">
+          Engineered for Performance &amp; Speed
         </p>
       </footer>
     </section>
   );
 }
 
-function Row({ label, value, href }: { label: string; value: string; href?: string }) {
-  return (
-    <div className="flex items-center justify-between gap-4 border-b border-slate-100 dark:border-white/[0.05] pb-4">
-      <dt className="text-sm sm:text-base text-slate-500 dark:text-slate-400 font-medium">{label}</dt>
-      {href ? (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-base sm:text-lg font-semibold text-sky-700 dark:text-cyan-300 transition-colors hover:text-slate-950 dark:hover:text-white hover:underline"
-        >
-          {value}
-        </a>
-      ) : (
-        <dd className="text-base sm:text-lg font-bold text-slate-950 dark:text-white">{value}</dd>
-      )}
-    </div>
-  );
-}
 
 
 

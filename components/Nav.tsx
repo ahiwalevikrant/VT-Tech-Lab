@@ -7,11 +7,9 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "#services", label: "Services" },
-  { href: "#roadmap", label: "AI Blueprint" },
-  { href: "#work", label: "Client Apps" },
-  { href: "#systems", label: "AI Systems" },
+  { href: "#work", label: "Work" },
   { href: "#skills", label: "Stack" },
-  { href: "#contact", label: "Consultation" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
