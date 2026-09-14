@@ -162,4 +162,34 @@ export const stats = [
   { value: "End-to-End", label: "AI & Full-Stack" },
 ];
 
+export const experience = [
+  {
+    role: "Product Engineer",
+    company: "Speridian Technologies",
+    period: "Apr 2025 — Present",
+    points: [
+      "Maintained Java Spring Boot APIs and Commission Module in Angular.",
+      "Accelerated delivery using Claude Code and Codex agentic workflows.",
+    ],
+  },
+  {
+    role: "Software Engineer",
+    company: "Speridian Technologies",
+    companyNote: "",
+    period: "Nov 2022 — Mar 2025",
+    points: [
+      "Built automated reconciliation platform, cutting manual effort by 70%.",
+      "Awarded September SPOT Award for outstanding engineering delivery.",
+    ],
+  },
+];
+
+export const education = {
+  degree: "Bachelor of Engineering, Production Engineering",
+  school: "AISSMS College of Engineering, Savitribai Phule Pune University",
+  location: "Pune, India",
+  period: "Graduated May 2020",
+};
+
+
 
