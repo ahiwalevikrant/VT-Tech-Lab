@@ -50,7 +50,7 @@ export default function Projects() {
                 className="btn-primary rounded-full px-4 py-1.5 text-xs font-bold inline-flex items-center gap-1.5 !min-h-0"
               >
                 <span>Demo</span>
-                <span>↗</span>
+                <span aria-hidden="true">-&gt;</span>
               </a>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function Projects() {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-white/[0.06] flex items-center justify-between gap-4">
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.slice(0, 3).map((s) => (
                     <span
@@ -101,14 +101,26 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-mono font-bold text-sky-600 dark:text-cyan-300 hover:underline inline-flex items-center gap-1"
-                >
-                  GitHub ↗
-                </a>
+                <div className="flex shrink-0 items-center gap-3">
+                  {"liveUrl" in project && project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-300 hover:underline inline-flex items-center gap-1"
+                    >
+                      Live
+                    </a>
+                  ) : null}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono font-bold text-sky-600 dark:text-cyan-300 hover:underline inline-flex items-center gap-1"
+                  >
+                    GitHub
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -117,7 +129,3 @@ export default function Projects() {
     </section>
   );
 }
-
-
-
-

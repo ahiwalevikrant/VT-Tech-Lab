@@ -121,6 +121,15 @@ export const clientProjects = [
 
 export const featuredProjects = [
   {
+    id: "edugenai",
+    name: "EduGenAI",
+    tag: "AI Education",
+    desc: "AI-powered education platform for generating learning content and interactive study experiences.",
+    githubUrl: "https://github.com/ahiwalevikrant/EduGenAI",
+    liveUrl: "https://edugenai-tau.vercel.app/",
+    stack: ["Next.js", "AI", "Vercel", "Education"],
+  },
+  {
     id: "habit-proof",
     name: "HabitProof",
     tag: "AI Biometrics",
@@ -190,6 +199,5 @@ export const education = {
   location: "Pune, India",
   period: "Graduated May 2020",
 };
-
 
 
