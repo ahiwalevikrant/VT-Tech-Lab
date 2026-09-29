@@ -26,7 +26,7 @@ sets `output: "export"`).
 
 You have two options:
 
-### Option A — Automatic (recommended)
+### Option A — Automatic
 
 1. Push this project to a new GitHub repo, e.g. `vt-tech-lab`.
 2. In the repo, go to **Settings → Pages → Build and deployment → Source**,
